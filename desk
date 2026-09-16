@@ -1,8 +1,10 @@
-# Baixa o wallpaper
-iwr -uri -o C:\Windows\Tasks\wallpaper.png
+#Script de modificação de Wallpaper
+
+# Baixa o wallpaper e salva em "C:\Windows\Tasks\"
+iwr -uri https://github.com/thiagosmith/desk/blob/main/wallpaper.jpeg -o C:\Windows\Tasks\wallpaper.jpeg
 
 # Defina o caminho da imagem que será usada como papel de parede
-$wallpaper = "C:\Windows\Tasks\wallpaper.png"
+$wallpaper = "C:\Windows\Tasks\wallpaper.jpeg"
 
 # Atualiza o registro do Windows com o novo papel de parede
 Set-ItemProperty -Path 'HKCU:\Control Panel\Desktop\' -Name wallpaper -Value $wallpaper
