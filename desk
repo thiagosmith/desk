@@ -1,0 +1,11 @@
+# Baixa o wallpaper
+iwr -uri -o C:\Windows\Tasks\wallpaper.jpg
+
+# Defina o caminho da imagem que será usada como papel de parede
+$wallpaper = "C:\Windows\Tasks\wallpaper.jpg"
+
+# Atualiza o registro do Windows com o novo papel de parede
+Set-ItemProperty -Path 'HKCU:\Control Panel\Desktop\' -Name wallpaper -Value $wallpaper
+
+# Aplica a mudança imediatamente
+RUNDLL32.EXE user32.dll,UpdatePerUserSystemParameters
