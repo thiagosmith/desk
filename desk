@@ -9,5 +9,14 @@ $wallpaper = "C:\Windows\Tasks\wallpaper.jpeg"
 # Atualiza o registro do Windows com o novo papel de parede
 Set-ItemProperty -Path 'HKCU:\Control Panel\Desktop\' -Name wallpaper -Value $wallpaper
 
-# Aplica a mudança imediatamente
-RUNDLL32.EXE user32.dll,UpdatePerUserSystemParameters
+# Força o Windows a aplicar o novo papel de parede
+Add-Type -TypeDefinition @"
+using System.Runtime.InteropServices;
+public class Wallpaper {
+    [DllImport("user32.dll", SetLastError = true)]
+    public static extern bool SystemParametersInfo(int uAction, int uParam, string lpvParam, int fuWinIni);
+}
+"@
+
+# Chama a função nativa do Windows
+[Wallpaper]::SystemParametersInfo(20, 0, $wallpaper, 3)
