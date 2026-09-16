@@ -1,7 +1,7 @@
 #Script de modificação de Wallpaper
 
 # Baixa o wallpaper e salva em "C:\Windows\Tasks\"
-iwr -uri https://github.com/thiagosmith/desk/blob/main/wallpaper.jpeg -o C:\Windows\Tasks\wallpaper.jpeg
+iwr -uri https://raw.githubusercontent.com/thiagosmith/desk/refs/heads/main/wallpaper.jpeg -o C:\Windows\Tasks\wallpaper.jpeg
 
 # Defina o caminho da imagem que será usada como papel de parede
 $wallpaper = "C:\Windows\Tasks\wallpaper.jpeg"
